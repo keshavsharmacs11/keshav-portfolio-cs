@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" fill="none">
+<defs>
+ <linearGradient id="bg" x1="50" y1="30" x2="1150" y2="780" gradientUnits="userSpaceOnUse"><stop stop-color="#06172A"/><stop offset=".55" stop-color="#0A2B4A"/><stop offset="1" stop-color="#050914"/></linearGradient>
+ <linearGradient id="chip" x1="400" y1="200" x2="810" y2="620" gradientUnits="userSpaceOnUse"><stop stop-color="#A8F3FF"/><stop offset=".28" stop-color="#2D9FFF"/><stop offset=".65" stop-color="#1350B7"/><stop offset="1" stop-color="#081B4B"/></linearGradient>
+ <radialGradient id="glow" cx="0" cy="0" r="1" gradientTransform="matrix(0 280 -350 0 650 390)" gradientUnits="userSpaceOnUse"><stop stop-color="#1EAFFF" stop-opacity=".44"/><stop offset="1" stop-color="#137EFF" stop-opacity="0"/></radialGradient>
+ <filter id="soft" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="22"/></filter>
+</defs>
+<rect width="1200" height="800" fill="url(#bg)"/><rect width="1200" height="800" fill="url(#glow)"/>
+<g stroke="#38B8FF" stroke-opacity=".35" stroke-width="3"><path d="M0 180H270L370 280M0 600H240L390 450M1200 230H990L860 350M1200 610H980L830 460"/><path d="M300 0V140L420 260M900 0V130L790 250M300 800V660L420 540M900 800V650L790 530"/></g>
+<path d="M430 265L650 150L870 265L650 390Z" fill="#1A6BC4" stroke="#70DFFF" stroke-width="4"/>
+<path d="M430 265V535L650 675V390Z" fill="#0A347A" stroke="#32AFFF" stroke-width="4"/>
+<path d="M650 390V675L870 535V265Z" fill="#08265F" stroke="#168BDE" stroke-width="4"/>
+<path d="M500 300L650 218L800 300L650 385Z" fill="#071B3F" stroke="#8AEAFF" stroke-width="3"/>
+<path d="M510 318V490L650 577V404Z" fill="#092855" stroke="#50CFFF" stroke-opacity=".6" stroke-width="2"/>
+<path d="M650 404V577L790 490V318Z" fill="#061A43" stroke="#269EFF" stroke-opacity=".65" stroke-width="2"/>
+<g stroke="#55CBFF" stroke-width="4" stroke-linecap="round"><path d="M560 350h42M560 372h65M560 394h50M682 350h45M682 372h55M682 394h40"/><path d="M545 455l70 42M545 480l70 42M680 500l75-44M680 525l75-44"/></g>
+<g fill="#B7F5FF"><circle cx="500" cy="300" r="7"/><circle cx="800" cy="300" r="7"/><circle cx="650" cy="218" r="7"/><circle cx="650" cy="577" r="7"/></g>
+<circle cx="650" cy="390" r="275" stroke="#49BEFF" stroke-opacity=".22" stroke-width="2" stroke-dasharray="4 18"/>
+<circle cx="650" cy="390" r="305" stroke="#6DDBFF" stroke-opacity=".12" stroke-width="15" filter="url(#soft)"/>
+<g fill="#9CEEFF"><circle cx="245" cy="240" r="4"/><circle cx="990" cy="200" r="5"/><circle cx="1000" cy="610" r="3"/><circle cx="250" cy="610" r="3"/></g>
+</svg>

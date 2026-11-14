@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" fill="none">
+<defs>
+ <linearGradient id="bg" x1="80" y1="50" x2="1120" y2="780" gradientUnits="userSpaceOnUse"><stop stop-color="#1A0D2D"/><stop offset=".55" stop-color="#4B1B78"/><stop offset="1" stop-color="#100D20"/></linearGradient>
+ <linearGradient id="r1" x1="160" y1="140" x2="1000" y2="740" gradientUnits="userSpaceOnUse"><stop stop-color="#F0B6FF"/><stop offset=".45" stop-color="#A45CFF"/><stop offset="1" stop-color="#5E45E8"/></linearGradient>
+ <linearGradient id="r2" x1="960" y1="40" x2="240" y2="760" gradientUnits="userSpaceOnUse"><stop stop-color="#F7D8FF" stop-opacity=".88"/><stop offset=".55" stop-color="#B35DFF" stop-opacity=".58"/><stop offset="1" stop-color="#7542B8" stop-opacity=".08"/></linearGradient>
+ <radialGradient id="glow" cx="0" cy="0" r="1" gradientTransform="matrix(0 440 -570 0 760 350)" gradientUnits="userSpaceOnUse"><stop stop-color="#D17BFF" stop-opacity=".44"/><stop offset="1" stop-color="#7C42FF" stop-opacity="0"/></radialGradient>
+ <filter id="blur" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="28"/></filter>
+</defs>
+<rect width="1200" height="800" fill="url(#bg)"/><rect width="1200" height="800" fill="url(#glow)"/>
+<circle cx="820" cy="340" r="240" fill="#A949FF" opacity=".22" filter="url(#blur)"/>
+<path d="M-80 570C150 230 340 180 500 340C650 490 760 680 1010 500C1140 408 1240 260 1320 190" stroke="url(#r1)" stroke-width="115" stroke-linecap="round" opacity=".65"/>
+<path d="M-100 630C150 300 350 260 500 410C670 580 770 760 1020 570C1145 475 1250 320 1320 270" stroke="#F8D8FF" stroke-opacity=".55" stroke-width="3"/>
+<path d="M-80 250C120 430 310 620 490 500C670 380 780 130 980 205C1100 250 1180 360 1300 390" stroke="url(#r2)" stroke-width="72" stroke-linecap="round" opacity=".48"/>
+<path d="M-80 250C120 430 310 620 490 500C670 380 780 130 980 205C1100 250 1180 360 1300 390" stroke="#F5D5FF" stroke-opacity=".6" stroke-width="2"/>
+<g fill="#F7DDFF"><circle cx="250" cy="250" r="5"/><circle cx="915" cy="150" r="4"/><circle cx="1040" cy="595" r="6"/><circle cx="690" cy="690" r="3"/></g>
+<g stroke="#DAB3FF" stroke-opacity=".35"><path d="M90 100h1020M90 700h1020"/><path d="M160 0v800M1040 0v800"/></g>
+</svg>

@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" fill="none">
+<defs>
+ <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="800" gradientUnits="userSpaceOnUse"><stop stop-color="#18202C"/><stop offset=".5" stop-color="#465164"/><stop offset="1" stop-color="#0A1019"/></linearGradient>
+ <linearGradient id="metal" x1="340" y1="160" x2="850" y2="670" gradientUnits="userSpaceOnUse"><stop stop-color="#FFFFFF"/><stop offset=".18" stop-color="#AAB6C8"/><stop offset=".35" stop-color="#F8FBFF"/><stop offset=".56" stop-color="#77879A"/><stop offset=".78" stop-color="#E8F0FA"/><stop offset="1" stop-color="#65758B"/></linearGradient>
+ <linearGradient id="edge" x1="300" y1="200" x2="900" y2="650" gradientUnits="userSpaceOnUse"><stop stop-color="#FFFFFF"/><stop offset=".5" stop-color="#C5D4E6"/><stop offset="1" stop-color="#5E6D80"/></linearGradient>
+ <radialGradient id="spot" cx="0" cy="0" r="1" gradientTransform="matrix(0 300 -440 0 760 390)" gradientUnits="userSpaceOnUse"><stop stop-color="#DCEBFF" stop-opacity=".3"/><stop offset="1" stop-color="#DCEBFF" stop-opacity="0"/></radialGradient>
+ <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="14"/></filter>
+</defs>
+<rect width="1200" height="800" fill="url(#bg)"/><rect width="1200" height="800" fill="url(#spot)"/>
+<ellipse cx="690" cy="650" rx="360" ry="42" fill="#05080F" opacity=".6" filter="url(#shadow)"/>
+<g transform="translate(650 390) rotate(-18)">
+ <ellipse rx="240" ry="145" stroke="#0A1019" stroke-width="50" opacity=".5"/>
+ <ellipse rx="240" ry="145" stroke="url(#metal)" stroke-width="35"/>
+ <ellipse rx="240" ry="145" stroke="#FFFFFF" stroke-opacity=".6" stroke-width="3"/>
+ <ellipse rx="155" ry="220" transform="rotate(48)" stroke="url(#edge)" stroke-width="28"/>
+ <ellipse rx="155" ry="220" transform="rotate(48)" stroke="#FFFFFF" stroke-opacity=".45" stroke-width="2"/>
+ <path d="M-200-60C-140-155 45-190 175-85" stroke="#FFFFFF" stroke-opacity=".8" stroke-width="5" stroke-linecap="round"/>
+ <path d="M-145 130C-65 188 100 175 184 90" stroke="#67788E" stroke-opacity=".9" stroke-width="7" stroke-linecap="round"/>
+</g>
+<path d="M100 170H1100M100 630H1100" stroke="#D6E2F3" stroke-opacity=".12"/>
+<g fill="#EEF5FF" opacity=".8"><circle cx="250" cy="270" r="2"/><circle cx="1000" cy="280" r="3"/><circle cx="930" cy="580" r="2"/></g>
+</svg>

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" fill="none">
+<defs>
+ <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="800" gradientUnits="userSpaceOnUse"><stop stop-color="#1D1711"/><stop offset=".55" stop-color="#322012"/><stop offset="1" stop-color="#080D18"/></linearGradient>
+ <linearGradient id="gold" x1="250" y1="150" x2="960" y2="680" gradientUnits="userSpaceOnUse"><stop stop-color="#FFF1B8"/><stop offset=".45" stop-color="#D89B42"/><stop offset="1" stop-color="#75421B"/></linearGradient>
+ <radialGradient id="core" cx="0" cy="0" r="1" gradientTransform="matrix(0 250 -250 0 780 375)" gradientUnits="userSpaceOnUse"><stop stop-color="#FFE6A2" stop-opacity=".36"/><stop offset="1" stop-color="#D38B32" stop-opacity="0"/></radialGradient>
+ <filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="18"/></filter>
+</defs>
+<rect width="1200" height="800" fill="url(#bg)"/><circle cx="780" cy="385" r="300" fill="url(#core)"/>
+<g transform="translate(780 390)" stroke="url(#gold)">
+ <circle r="250" stroke-width="2"/><circle r="220" stroke-opacity=".75"/><circle r="185" stroke-opacity=".55"/><circle r="145" stroke-opacity=".7"/><circle r="90" stroke-opacity=".55"/>
+ <circle r="258" stroke-opacity=".28" stroke-dasharray="3 15" stroke-width="4"/>
+ <g stroke-opacity=".62" stroke-width="2"><path d="M0-250V250M-250 0H250M-177-177L177 177M177-177L-177 177"/><path d="M-95-232L95 232M95-232L-95 232M-232-95L232 95M-232 95L232-95"/></g>
+ <g fill="#F6D28A" stroke="none"><circle cy="-250" r="5"/><circle cy="250" r="5"/><circle cx="250" r="5"/><circle cx="-250" r="5"/><circle cx="177" cy="177" r="4"/><circle cx="-177" cy="-177" r="4"/><circle cx="177" cy="-177" r="4"/><circle cx="-177" cy="177" r="4"/></g>
+ <path d="M0-150L35-35L150 0L35 35L0 150L-35 35L-150 0L-35-35Z" fill="#E7B45D" fill-opacity=".08" stroke-width="2"/>
+ <circle r="22" fill="#F4C66B" fill-opacity=".15" stroke-width="2"/><circle r="8" fill="#FFE6A2" stroke="none"/>
+</g>
+<path d="M120 660C260 520 340 700 470 565" stroke="#E5AE58" stroke-opacity=".2" stroke-width="2"/>
+<g fill="#FFE5A6"><circle cx="225" cy="210" r="3"/><circle cx="1040" cy="185" r="4"/><circle cx="1010" cy="635" r="3"/><circle cx="420" cy="140" r="2"/></g>
+<circle cx="780" cy="390" r="280" stroke="#D59B4C" stroke-opacity=".2" stroke-width="15" filter="url(#glow)"/>
+</svg>
