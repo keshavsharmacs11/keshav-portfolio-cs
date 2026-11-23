@@ -4,10 +4,9 @@ import { useRef } from "react";
 import { useReducedMotion, useScroll, useTransform } from "motion/react";
 import * as m from "motion/react-m";
 import { HeroVisual } from "@/components/hero-visual";
-import { profile, projects } from "@/data/portfolio";
+import { profile } from "@/data/portfolio";
 
 const easing = [0.22, 1, 0.36, 1] as const;
-const liveProjects = projects.filter((project) => Boolean(project.liveUrl)).length;
 
 /**
  * A deliberately separate mobile art direction. The laptop hero stays intact;
@@ -106,20 +105,13 @@ export function MobileHero() {
             >
               Explore projects <span aria-hidden="true">↗</span>
             </m.a>
-            <m.a
-              href={profile.resumeUrl}
-              download
-              className="mobile-hero__resume"
-              whileHover={reducedMotion ? undefined : { y: -2 }}
-              whileTap={{ scale: 0.98 }}
-            >
-              <span>Download resume</span><b aria-hidden="true">↓</b>
-            </m.a>
+
             <m.a
               href={profile.githubUrl}
               target="_blank"
               rel="noreferrer"
               className="mobile-hero__github"
+              style={{ gridColumn: "1 / -1" }}
               whileHover={reducedMotion ? undefined : { y: -2 }}
               whileTap={{ scale: 0.98 }}
             >
@@ -134,10 +126,7 @@ export function MobileHero() {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.7, delay: 0.95 }}
         >
-          <div className="mobile-hero__metrics">
-            <div><strong>{String(projects.length).padStart(2, "0")}</strong><span>PROJECTS</span></div>
-            <div><strong>{String(liveProjects).padStart(2, "0")}</strong><span>LIVE SITES</span></div>
-          </div>
+
           <a className="mobile-hero__scroll" href="#work">
             <span>SCROLL</span><b aria-hidden="true">↓</b>
           </a>

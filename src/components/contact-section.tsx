@@ -49,7 +49,7 @@ export function ContactSection() {
           viewport={{ once: true, amount: 0.25 }}
           transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
         >
-          <span className="section-kicker"><i /> 05 / CONTACT</span>
+          <span className="section-kicker"><i /> CONTACT</span>
           <h2>LET'S TALK ABOUT<br /><em>YOUR NEXT BUILD.</em></h2>
           <p>{profile.opportunities}</p>
         </m.div>

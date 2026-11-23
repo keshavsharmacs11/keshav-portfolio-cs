@@ -31,14 +31,9 @@ export function AboutSection() {
             viewport={{ once: true, amount: 0.25 }}
             transition={{ duration: 0.78, ease: [0.22, 1, 0.36, 1] }}
           >
-            <span className="section-kicker"><i /> 03 / THE PERSON BEHIND THE PIXELS</span>
+            <span className="section-kicker"><i /> THE PERSON BEHIND THE PIXELS</span>
             <h2 className="section-title">ENGINEERING<br />WITH A <em>BUILDER'S MINDSET.</em></h2>
             <p>{profile.about}</p>
-            {profile.resumeUrl.trim() && (
-              <a className="about-resume-link" href={profile.resumeUrl} target="_blank" rel="noopener noreferrer">
-                Download resume <span>↓</span>
-              </a>
-            )}
           </m.div>
         </div>
 
@@ -68,7 +63,7 @@ export function AboutSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.25 }}
           >
-            <span className="section-kicker"><i /> 04 / TECHNICAL SKILLS</span>
+            <span className="section-kicker"><i /> TECHNICAL SKILLS</span>
             <h3>BUILT WITH <em>INTENTION.</em></h3>
           </m.div>
 
@@ -82,7 +77,6 @@ export function AboutSection() {
                 viewport={{ once: true, amount: 0.25 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
               >
-                <span className="skill-group__number">{group.number}</span>
                 <h4>{group.title}</h4>
                 <div className="skill-pills">
                   {group.items.map((item) => (

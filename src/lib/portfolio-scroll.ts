@@ -86,3 +86,14 @@ export function easeOutCubic(value: number) {
   const t = clamp01(value);
   return 1 - Math.pow(1 - t, 3);
 }
+/**
+ * Pause the smooth page scrolling while a project modal is open.
+ * Restore it when the modal closes.
+ */
+export function pausePortfolioScroll(): () => void {
+  lenis?.stop();
+
+  return () => {
+    lenis?.start();
+  };
+}

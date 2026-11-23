@@ -1876,3 +1876,357 @@ html.lenis { scroll-behavior: auto !important; }
   .site-footer__github { font-size: 10px; }
 }
 @media (prefers-reduced-motion: reduce) { .button--glow,.header-cta,.mobile-hero__primary,.project-reel-card,.project-artwork__image,.capability-card,.about-resume-link { transition: none !important; } }
+/* ==========================================
+   V12 — MOBILE REEL + CASE STUDY MODAL FIX
+========================================== */
+
+/* Modal backdrop */
+.case-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  display: grid;
+  place-items: center;
+  padding: 18px;
+  overflow: hidden;
+  overscroll-behavior: contain;
+  background: rgba(4, 7, 12, .8);
+  backdrop-filter: blur(12px);
+}
+
+/* Smaller, controlled case-study window */
+.case-modal {
+  width: min(760px, calc(100vw - 48px));
+  max-height: min(84dvh, 760px);
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(143, 124, 236, .58) #111720;
+  border: 1px solid rgba(218, 226, 237, .18);
+  border-radius: 15px;
+  background: #111720;
+  box-shadow:
+    0 34px 90px rgba(0, 0, 0, .52),
+    0 0 36px rgba(105, 91, 185, .09);
+}
+
+.case-modal::-webkit-scrollbar {
+  width: 7px;
+}
+
+.case-modal::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, .025);
+}
+
+.case-modal::-webkit-scrollbar-thumb {
+  border: 2px solid #111720;
+  border-radius: 99px;
+  background: rgba(143, 124, 236, .58);
+}
+
+/* Sticky modal header */
+.case-modal__top {
+  position: sticky;
+  top: 0;
+  z-index: 8;
+  min-height: 58px;
+  padding: 10px 22px;
+  background: rgba(17, 23, 32, .94);
+  backdrop-filter: blur(16px);
+  border-bottom-color: rgba(218, 226, 237, .12);
+}
+
+/* Clean rectangular close button */
+.case-modal__top button.case-modal__close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: auto;
+  min-width: 82px;
+  height: 36px;
+  padding: 0 13px;
+  border: 1px solid rgba(165, 151, 224, .34);
+  border-radius: 8px;
+  color: #e9e6f8;
+  background: linear-gradient(
+    135deg,
+    rgba(128, 93, 227, .2),
+    rgba(79, 111, 203, .12)
+  );
+  font: 600 9px var(--font-mono), monospace;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: .2s ease;
+}
+
+.case-modal__top button.case-modal__close:hover {
+  border-color: rgba(181, 163, 255, .72);
+  background: linear-gradient(
+    135deg,
+    rgba(128, 93, 227, .34),
+    rgba(79, 111, 203, .2)
+  );
+  transform: translateY(-1px);
+}
+
+.case-modal__top button.case-modal__close svg {
+  display: block;
+  flex: 0 0 auto;
+}
+
+/* Modal content spacing */
+.case-modal__art {
+  min-height: 205px;
+}
+
+.case-modal__content {
+  padding: 25px clamp(24px, 4vw, 40px) 30px;
+}
+
+.case-modal__content h3 {
+  font-size: clamp(28px, 3.2vw, 40px);
+}
+
+.case-modal__content > p {
+  max-width: 62ch;
+  margin-block: 10px 0;
+  font-size: 13px;
+  line-height: 1.72;
+}
+
+.case-modal__meta {
+  grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+  gap: clamp(18px, 3vw, 30px);
+  margin-top: 21px;
+  padding-block: 18px;
+}
+
+.case-modal__meta > div {
+  min-width: 0;
+}
+
+.case-modal__highlights {
+  gap: 10px;
+  margin-block: 18px 22px;
+}
+
+.case-modal__highlights span {
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.case-modal .button--glow {
+  min-height: 42px;
+  padding: 0 18px;
+}
+
+/* Hide floating assistant while project modal is open */
+.case-modal-open .portfolio-assistant {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* MOBILE PROJECT CAROUSEL */
+@media (max-width: 760px) {
+  .work-reel-section {
+    height: auto !important;
+    min-height: 0 !important;
+    padding: 76px 0 82px !important;
+    overflow: visible !important;
+  }
+
+  .work-reel-pin {
+    position: relative !important;
+    top: auto !important;
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+  }
+
+  .work-reel-shell {
+    display: block;
+    height: auto !important;
+    min-height: 0;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  .work-reel-heading {
+    display: block;
+  }
+
+  .work-reel-heading .section-intro {
+    display: block;
+  }
+
+  .work-reel-controls {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-top: 13px;
+  }
+
+  .work-reel-controls .project-filters {
+    flex-wrap: nowrap;
+    width: calc(100% - 52px);
+    max-width: calc(100% - 52px);
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .project-reel-window {
+    display: block;
+    flex: none;
+    width: calc(100% + var(--gutter));
+    min-height: 0;
+    height: auto;
+    margin: 17px calc(var(--gutter) * -1) 0 0;
+    padding: 1px var(--gutter) 14px 1px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: var(--gutter);
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
+    touch-action: pan-x pan-y;
+    scrollbar-width: none;
+    mask-image: none;
+  }
+
+  .project-reel-window::-webkit-scrollbar {
+    display: none;
+  }
+
+  .project-reel-track {
+    display: flex;
+    align-items: stretch;
+    gap: 13px;
+    width: max-content;
+    height: auto;
+    padding: 0 1px 0 0;
+    transform: none !important;
+    transform-style: preserve-3d;
+    will-change: auto;
+  }
+
+  .project-reel-card {
+    flex: 0 0 min(84vw, 430px);
+    width: min(84vw, 430px);
+    height: auto;
+    min-height: clamp(330px, 55svh, 390px);
+    max-height: none;
+    padding: 19px;
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+    opacity: 1;
+    transform-origin: center center;
+    will-change: transform, opacity;
+  }
+
+  .work-reel-progress {
+    display: block;
+    height: 2px;
+    margin-top: 7px;
+  }
+
+  .work-reel-progress span {
+    transform-origin: left center;
+  }
+
+  .work-reel-note {
+    display: flex;
+    padding-top: 12px;
+  }
+
+  .work-reel-note__desktop {
+    display: none;
+  }
+
+  .work-reel-note__mobile {
+    display: inline;
+  }
+
+  /* Mobile modal sizing */
+  .case-modal-backdrop {
+    padding:
+      max(10px, env(safe-area-inset-top))
+      12px
+      max(10px, env(safe-area-inset-bottom));
+  }
+
+  .case-modal {
+    width: 100%;
+    max-width: 560px;
+    max-height: calc(100dvh - 20px);
+    border-radius: 13px;
+  }
+
+  .case-modal__top {
+    min-height: 54px;
+    padding: 9px 15px;
+  }
+
+  .case-modal__top button.case-modal__close {
+    min-width: 74px;
+    height: 34px;
+  }
+
+  .case-modal__art {
+    min-height: clamp(150px, 22dvh, 195px);
+    padding: 18px 6%;
+  }
+
+  .case-modal__art span {
+    font-size: clamp(54px, 16vw, 88px);
+  }
+
+  .case-modal__art small {
+    font-size: 7px;
+  }
+
+  .case-modal__content {
+    padding: 20px 18px 24px;
+  }
+
+  .case-modal__content h3 {
+    font-size: clamp(27px, 8vw, 36px);
+  }
+
+  .case-modal__content > p {
+    font-size: 12px;
+    line-height: 1.65;
+  }
+
+  .case-modal__meta {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 17px;
+    margin-top: 18px;
+    padding-block: 16px;
+  }
+
+  .case-modal__meta small {
+    margin-bottom: 8px;
+  }
+
+  .case-modal__highlights {
+    gap: 8px;
+    margin-block: 16px 20px;
+  }
+
+  .case-modal__highlights span {
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 420px) {
+  .project-reel-card {
+    flex-basis: 82vw;
+    width: 82vw;
+  }
+}

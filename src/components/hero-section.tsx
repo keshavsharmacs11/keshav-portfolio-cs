@@ -6,12 +6,11 @@ import { useMotionValue, useReducedMotion, useSpring, useTransform } from "motio
 import * as m from "motion/react-m";
 import { HeroVisual } from "@/components/hero-visual";
 import { MobileHero } from "@/components/mobile-hero";
-import { profile, projects } from "@/data/portfolio";
+import { profile } from "@/data/portfolio";
 import { easeOutCubic, onPortfolioFrame, pinProgress, segment } from "@/lib/portfolio-scroll";
 
 const ease = [0.22, 1, 0.36, 1] as const;
 const tech = ["REACT.JS", "JAVASCRIPT", "PYTHON", "JAVA", "NEXT.JS", "TYPESCRIPT", "MONGODB", "NUMPY", "PANDAS", "SCIKIT-LEARN", "GIT & GITHUB"];
-const liveProjectCount = projects.filter((project) => Boolean(project.liveUrl)).length;
 
 export function HeroSection() {
   const reduceMotion = useReducedMotion();
@@ -135,13 +134,10 @@ export function HeroSection() {
 
               <m.div className="hero-actions" initial={reduceMotion ? false : { opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.76, ease }}>
                 <m.a href="#work" className="button button--glow" whileHover={reduceMotion ? undefined : { y: -3, scale: 1.025 }} whileTap={{ scale: 0.97 }}>Explore projects <span>↗</span></m.a>
-                {profile.resumeUrl && <m.a href={profile.resumeUrl} download className="button button--resume" whileHover={reduceMotion ? undefined : { y: -2 }} whileTap={{ scale: 0.98 }}>Download resume <span>↓</span></m.a>}
                 <m.a href={profile.githubUrl} target="_blank" rel="noreferrer" className="hero-github-link" whileHover={reduceMotion ? undefined : { y: -2 }} whileTap={{ scale: 0.98 }}>GitHub repository <span>↗</span></m.a>
               </m.div>
 
               <m.div className="hero-facts" initial={reduceMotion ? false : { opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.7, delay: 0.95 }}>
-                <div><strong>{String(projects.length).padStart(2, "0")}</strong><span>PROJECTS</span></div>
-                <div><strong>{String(liveProjectCount).padStart(2, "0")}</strong><span>LIVE SITES</span></div>
                 <div><strong>WEB + AI/ML</strong><span>FOCUS</span></div>
               </m.div>
             </div>

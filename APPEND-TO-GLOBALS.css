@@ -1,0 +1,4 @@
+/* Decorative portfolio watermark removal */
+.work-section::before {
+  content: none !important;
+}
