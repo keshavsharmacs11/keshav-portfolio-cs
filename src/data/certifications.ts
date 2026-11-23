@@ -8,26 +8,30 @@ export type Certification = {
   category: CertificationCategory;
   completedAt: string;
   skills: string[];
+  /** Local image path, e.g. /images/certificates/react-certificate.webp */
+  previewImage?: string;
+  /** Public verification URL supplied by the issuing platform. */
   credentialUrl?: string;
   credentialId?: string;
 };
 
 /**
- * Add your real certificates here. Keep this array empty until you have
- * the certificate details and (where available) a genuine verification URL.
- * Do not add illustrative/sample credentials as real qualifications.
+ * Add only certificates you have genuinely completed.
+ * Put certificate images in public/images/certificates/ and reference them
+ * with a path beginning `/images/certificates/`.
  */
 export const certifications: Certification[] = [
-  // Example structure — duplicate and fill with your real details:
+  // Example structure — uncomment and replace with a real credential:
   // {
   //   id: "credential-slug",
-  //   title: "Certificate title",
+  //   title: "Your certificate title",
   //   issuer: "Issuing organization",
   //   issuerMark: "ORG",
   //   category: "Development",
   //   completedAt: "Month YYYY",
   //   skills: ["React", "JavaScript", "Frontend"],
-  //   credentialUrl: "https://...",
-  //   credentialId: "...",
+  //   previewImage: "/images/certificates/your-certificate.webp",
+  //   credentialUrl: "https://official-verification-link.example",
+  //   credentialId: "YOUR-CREDENTIAL-ID",
   // },
 ];

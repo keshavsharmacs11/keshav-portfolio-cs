@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { DM_Sans, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import "./mobile-hero-v9.css";
+import "./portfolio-finish.css";
 import { MotionProvider } from "@/components/motion-provider";
 
 const display = Space_Grotesk({ subsets: ["latin"], variable: "--font-display", display: "swap" });
