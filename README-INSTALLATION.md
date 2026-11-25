@@ -1,47 +1,47 @@
-# Portfolio professional finishing pass
+# Project card click + case-study modal update
 
-This patch is based on the latest `main` branch reviewed for `keshavsharmacs11/keshav-portfolio-cs`.
+This update changes the project interaction model:
 
-## Files included
+- For projects with a `liveUrl`, clicking the main card artwork/body opens the deployed website in a new tab.
+- The card footer separately provides **View case study** and **Visit live site** actions.
+- For projects without a live URL (Car Vista and SILVERTRACE), clicking the main card area opens the case study instead.
+- The case-study panel has a sticky header, a contained scroll area, improved hierarchy, contribution/stack sections, project highlights, and a clear live-site CTA where applicable.
+- The modal becomes a bottom-sheet-style panel on mobile and remains internally scrollable.
 
-- `src/components/site-header.tsx`
-  - Adds the Certifications section to reliable scroll-based active-section tracking.
-  - Uses a shared Motion `layoutId` for a sliding active nav pill.
-  - Keeps the glass navbar, quick search, resume link, keyboard support and mobile menu.
-  - Tightens tablet and small-phone header breakpoints.
+## Included files
 
-- `src/components/certifications-section.tsx`
-  - Keeps the approved `LEARNING, PROVEN.` concept.
-  - Shows a single designed empty state instead of four repeated placeholder certificate cards when no real credentials are entered.
-  - Still renders real certificate cards and category filters from `src/data/certifications.ts` when that array is populated.
+- `src/components/selected-work.tsx` — complete replacement.
+- `src/data/portfolio.ts` — complete replacement with the two supplied Hugging Face URLs and LIVE SITE statuses.
+- `src/app/APPEND-TO-GLOBALS.css` — append-only styles for card actions and the improved case-study panel.
 
-- `src/app/portfolio-finish.css`
-  - Refines spacing, alignment, responsive section rhythm and the credentials card/empty-state layout.
-  - Adds anchor scroll clearance for the fixed navbar.
-  - Includes specific mobile layout rules for capability cards, About, Education, Skills, Credentials and Contact.
+## Install
 
-- `src/app/layout.tsx`
-  - Imports the new finishing stylesheet after the existing styles so the refinements take precedence.
-
-## Apply
-
-1. Back up your current project or commit your work first.
-2. Extract this ZIP into the project root, `D:\portfolio-ks`, preserving the folder structure.
-3. Replace the included files when prompted.
-4. Make sure your existing `src/data/certifications.ts` remains in place. Do not replace it; it contains the real credential data source.
-5. Restart the dev server:
+1. Back up or commit your current project.
+2. Extract this ZIP into `D:\portfolio-ks` while preserving its folder structure.
+3. Replace the included `src/components/selected-work.tsx` and `src/data/portfolio.ts`.
+4. Open `src/app/APPEND-TO-GLOBALS.css`, copy its entire contents, and paste them at the very bottom of your existing `src/app/globals.css`. Do not replace `globals.css`.
+5. Restart the development server:
 
 ```powershell
-Ctrl + C
+cd D:\portfolio-ks
 Remove-Item -Recurse -Force .next -ErrorAction SilentlyContinue
 npm run dev
 ```
 
-6. Test desktop scrolling through Home → Work → Focus Areas → About → Credentials → Contact.
-7. Test at phone widths around 390px and 430px, and a tablet width around 820px.
+## Deployment links configured
 
-## Important
+- SENTBALE: https://sentbaleperfumes.com/
+- KWE: https://kwe-website.vercel.app/
+- Akshaanshh Jyotish: https://akshaanshhjyotish.com/
+- SafeCheck AI: https://keshav938927-safecheck-ai.hf.space/
+- Image Compression: https://keshav938927-image-compression-app.hf.space/
 
-The video shows a desktop browsing session; it does not include a phone viewport. The mobile refinements are based on the current mobile CSS and responsive components in the repository. Please check them on a real or emulated mobile viewport before deploying.
+Car Vista remains `PROJECT`; SILVERTRACE remains `CONCEPT` and has no public live URL.
 
-No real certification details have been added or invented. When you add credentials to `src/data/certifications.ts`, the card grid and category filters will appear automatically.
+## Test checklist
+
+- Click the main area of each live project card: it should open the live site in a new tab.
+- Click **View case study**: it should open the internal detail panel.
+- Scroll inside the detail panel: only the panel content should scroll; its close bar should remain visible.
+- Open Car Vista or SILVERTRACE: the card opens the case study.
+- Repeat on phone width; the case study should appear as a bottom sheet with its own scroll.

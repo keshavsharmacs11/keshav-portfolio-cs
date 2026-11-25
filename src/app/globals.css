@@ -2230,3 +2230,147 @@ html.lenis { scroll-behavior: auto !important; }
     width: 82vw;
   }
 }
+/* =========================================================
+   Project card actions — case study + direct live destination
+   Append this block to src/app/globals.css.
+========================================================= */
+.project-reel-card .project-card__bottom {
+  align-items: flex-end;
+  gap: 16px;
+}
+
+.project-card__identity {
+  display: flex;
+  flex: 1 1 150px;
+  min-width: 0;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.project-card__identity strong {
+  display: block;
+  color: #fff;
+  font-family: var(--font-display), sans-serif;
+  font-size: clamp(18px, 1.55vw, 22px);
+  line-height: 1.08;
+  letter-spacing: -.045em;
+  overflow-wrap: anywhere;
+}
+
+.project-card__identity small {
+  display: block;
+  color: #b4bfcd;
+  font-size: 10px;
+  line-height: 1.45;
+}
+
+.project-card__actions {
+  display: flex;
+  flex: 0 1 auto;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  max-width: 56%;
+}
+
+.project-card__open,
+.project-card__live-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 35px;
+  padding: 0 11px;
+  border: 1px solid rgba(173, 153, 255, .42);
+  border-radius: 999px;
+  color: #e7e3ff;
+  background: rgba(15, 18, 34, .68);
+  font: 600 9px/1 var(--font-body), sans-serif;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: transform .22s ease, border-color .22s ease, background .22s ease, box-shadow .22s ease;
+}
+
+.project-card__live-link {
+  border-color: rgba(169, 139, 255, .68);
+  color: #fff;
+  background: linear-gradient(110deg, rgba(126, 78, 222, .9), rgba(79, 105, 215, .88));
+  box-shadow: 0 5px 18px rgba(94, 76, 205, .2), inset 0 1px rgba(255,255,255,.16);
+}
+
+.project-card__open:hover,
+.project-card__live-link:hover {
+  transform: translateY(-2px);
+  border-color: rgba(200, 181, 255, .82);
+  background-color: rgba(126, 82, 226, .24);
+  box-shadow: 0 0 18px rgba(139, 92, 246, .18);
+}
+
+.project-card__availability {
+  display: inline-flex;
+  align-items: center;
+  min-height: 30px;
+  color: #9ca6ba;
+  font: 500 8px/1.35 var(--font-mono), monospace;
+  letter-spacing: .045em;
+  text-align: right;
+}
+
+.project-card__open:focus-visible,
+.project-card__live-link:focus-visible {
+  outline: 2px solid #b79aff;
+  outline-offset: 3px;
+}
+
+@media (max-width: 760px) {
+  .project-reel-card .project-card__bottom {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 13px;
+  }
+
+  .project-card__actions {
+    width: 100%;
+    max-width: none;
+    justify-content: flex-start;
+    gap: 8px;
+  }
+
+  .project-card__identity strong {
+    font-size: clamp(18px, 5.5vw, 23px);
+  }
+
+  .project-card__identity small {
+    font-size: 9px;
+  }
+
+  .project-card__open,
+  .project-card__live-link {
+    min-height: 36px;
+    padding-inline: 12px;
+    font-size: 9px;
+  }
+}
+
+@media (max-width: 380px) {
+  .project-card__actions {
+    gap: 7px;
+  }
+
+  .project-card__open,
+  .project-card__live-link {
+    min-height: 34px;
+    padding-inline: 9px;
+    font-size: 8px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-card__open,
+  .project-card__live-link {
+    transition: none !important;
+  }
+}
+  
