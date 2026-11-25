@@ -2455,3 +2455,374 @@ html.lenis { scroll-behavior: auto !important; }
     font-size: 10px;
   }
 }
+/* ================================================================
+   PORTFOLIO MOBILE FINISH PASS
+   Apply after the existing rules in src/app/globals.css.
+   Focus: project-card tap targets, modal scrolling, menu overflow,
+   certificate filters, text sizing and small-screen containment.
+================================================================ */
+
+@media (max-width: 760px) {
+  html,
+  body {
+    max-width: 100%;
+    overflow-x: clip;
+  }
+
+  .page-shell {
+    width: min(var(--shell), calc(100% - 36px));
+    min-width: 0;
+  }
+
+  /* Keep the floating mobile menu inside short phone viewports. */
+  .ks-floatnav__mobile-menu {
+    max-height: calc(100dvh - 100px) !important;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+  }
+
+  .ks-floatnav__mobile-menu nav a,
+  .ks-floatnav__mobile-resume,
+  .ks-floatnav__mobile-search {
+    min-height: 44px;
+    touch-action: manipulation;
+  }
+
+  /* Project cards: make the live destination the main tap surface.
+     The footer remains above it for the separate case-study action. */
+  .project-reel-card {
+    position: relative !important;
+    display: flex !important;
+    flex-direction: column !important;
+    min-width: 0;
+    padding: 0 !important;
+    overflow: hidden;
+    isolation: isolate;
+  }
+
+  .project-card__primary-hit {
+    position: absolute !important;
+    z-index: 2;
+    inset: 0;
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100%;
+    height: 100%;
+    min-width: 0;
+    min-height: 0;
+    padding: 18px 18px 82px !important;
+    border: 0;
+    border-radius: inherit;
+    color: inherit;
+    background: transparent;
+    font: inherit;
+    text-align: left;
+    text-decoration: none;
+    cursor: pointer;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .project-card__primary-hit:focus-visible {
+    outline: 2px solid #b79aff;
+    outline-offset: -4px;
+  }
+
+  .project-card__primary-hit .project-card__topline,
+  .project-card__primary-hit .project-card__bottom {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+  }
+
+  .project-card__primary-hit .project-card__topline {
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .project-card__primary-hit .project-reel-artwork {
+    position: absolute;
+    z-index: 1;
+    inset: 0;
+    pointer-events: none;
+  }
+
+  .project-card__primary-hit .project-artwork__image,
+  .project-card__primary-hit .project-artwork__grain {
+    pointer-events: none;
+  }
+
+  .project-card__primary-hit .project-card__bottom {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    gap: 9px;
+    min-width: 0;
+    margin-top: auto;
+    padding-top: 20px !important;
+  }
+
+  .project-card__primary-hit .project-card__bottom > span:first-child {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .project-card__primary-hit .project-card__bottom strong {
+    display: block;
+    max-width: 100%;
+    font-size: clamp(18px, 5.4vw, 23px);
+    line-height: 1.06;
+    overflow-wrap: anywhere;
+    text-wrap: balance;
+  }
+
+  .project-card__primary-hit .project-card__bottom small {
+    display: block;
+    margin-top: 6px;
+    font-size: 10px;
+    line-height: 1.45;
+  }
+
+  .project-card__primary-hint {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    min-height: 30px;
+    color: #d2c4ff;
+    font: 600 10px/1.3 var(--font-body), sans-serif;
+    white-space: normal;
+  }
+
+  .project-card__actions {
+    position: absolute !important;
+    z-index: 6;
+    inset: auto 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 8px;
+    width: 100%;
+    max-width: none !important;
+    min-height: 64px;
+    margin: 0;
+    padding: 10px 14px max(12px, env(safe-area-inset-bottom));
+    border-top: 1px solid rgba(205, 190, 255, .16);
+    background: linear-gradient(180deg, rgba(12, 15, 28, .92), rgba(8, 11, 20, .98));
+    -webkit-backdrop-filter: blur(14px);
+    backdrop-filter: blur(14px);
+    pointer-events: auto;
+  }
+
+  .project-card__details-link,
+  .project-card__live-link {
+    display: inline-flex;
+    flex: 0 1 auto;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    min-height: 40px;
+    padding: 0 13px;
+    border: 1px solid rgba(173, 153, 255, .42);
+    border-radius: 999px;
+    color: #eeeaff;
+    background: rgba(18, 20, 38, .9);
+    font: 600 10px/1 var(--font-body), sans-serif;
+    text-decoration: none;
+    white-space: nowrap;
+    cursor: pointer;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .project-card__live-link {
+    border-color: rgba(169, 139, 255, .72);
+    color: #fff;
+    background: linear-gradient(110deg, #8050df, #5269d9);
+    box-shadow: 0 5px 18px rgba(94, 76, 205, .2), inset 0 1px rgba(255, 255, 255, .16);
+  }
+
+  .project-card__status-note {
+    color: #9ca8bc;
+    font: 500 9px/1.4 var(--font-body), sans-serif;
+  }
+
+  .project-reel-window {
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    touch-action: pan-x pan-y;
+  }
+
+  .project-reel-card {
+    flex-basis: min(86vw, 410px);
+    width: min(86vw, 410px);
+    min-height: 370px;
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+  }
+
+  /* Certificate category filters remain horizontally reachable. */
+  .certificate-filters {
+    display: flex;
+    flex-wrap: nowrap;
+    max-width: 100%;
+    gap: 8px;
+    overflow-x: auto;
+    padding: 2px 2px 7px;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
+  }
+
+  .certificate-filters::-webkit-scrollbar {
+    display: none;
+  }
+
+  .certificate-filter {
+    flex: 0 0 auto;
+    min-height: 40px;
+    touch-action: manipulation;
+  }
+
+  /* More comfortable text and touch targets in About / Skills / Contact. */
+  .skill-group .skill-pills {
+    gap: 7px;
+  }
+
+  .skill-group .skill-pills span {
+    padding: 7px 9px;
+    font-size: 10px;
+    line-height: 1.35;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    min-height: 44px;
+    font-size: 16px;
+  }
+
+  .contact-submit,
+  .contact-copy-email {
+    min-height: 44px;
+  }
+
+  /* Keep the modal scrollable without losing the close control. */
+  .case-modal-backdrop {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding: max(8px, env(safe-area-inset-top)) 9px max(8px, env(safe-area-inset-bottom));
+    overflow: hidden;
+    overscroll-behavior: contain;
+  }
+
+  .case-modal {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 580px;
+    max-height: calc(100dvh - 16px - env(safe-area-inset-top));
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    border-radius: 20px 20px 14px 14px;
+  }
+
+  .case-modal__top {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    flex: 0 0 auto;
+    min-height: 58px;
+    padding: 9px 15px;
+    background: rgba(14, 20, 33, .96);
+    -webkit-backdrop-filter: blur(16px);
+    backdrop-filter: blur(16px);
+  }
+
+  .case-modal__top button.case-modal__close {
+    min-width: 82px;
+    min-height: 40px;
+  }
+
+  .case-modal__art {
+    flex: 0 0 auto;
+    min-height: clamp(145px, 21dvh, 190px);
+    padding: 18px 6%;
+  }
+
+  .case-modal__content {
+    flex: 0 0 auto;
+    padding: 22px 18px calc(26px + env(safe-area-inset-bottom));
+  }
+
+  .case-modal__content h3 {
+    font-size: clamp(27px, 7vw, 36px);
+    line-height: 1.06;
+    overflow-wrap: anywhere;
+  }
+
+  .case-modal__content > p {
+    font-size: 13px;
+    line-height: 1.72;
+  }
+
+  .case-modal__meta {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 17px;
+    margin-top: 18px;
+    padding-block: 16px;
+  }
+
+  .case-modal .button--glow {
+    min-height: 46px;
+  }
+}
+
+@media (max-width: 390px) {
+  .project-reel-card {
+    flex-basis: 88vw;
+    width: 88vw;
+    min-height: 360px;
+  }
+
+  .project-card__actions {
+    gap: 6px;
+    padding-inline: 11px;
+  }
+
+  .project-card__details-link,
+  .project-card__live-link {
+    min-height: 40px;
+    padding-inline: 10px;
+    font-size: 9px;
+  }
+
+  .mobile-hero__metrics div {
+    padding-inline: 7px;
+  }
+
+  .mobile-hero__metrics span {
+    white-space: normal;
+    line-height: 1.25;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-card__primary-hit,
+  .project-card__details-link,
+  .project-card__live-link,
+  .case-modal {
+    scroll-behavior: auto !important;
+    transition: none !important;
+  }
+}
